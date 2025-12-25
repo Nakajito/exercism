@@ -1,17 +1,15 @@
 def is_pangram(sentence):
-    abecedary = 'abcdefghijklmnopqrstuvwxyz'
-    sentence.lower()
-    sentence = sentence.replace('_', ' ')
-    
-    print(sentence)
-    
-    if sentence == '':
+    abecedary = "abcdefghijklmnopqrstuvwxyz"
+    sentence = sentence.lower()
+    sentence = sentence.replace("_", " ")
+
+    if sentence == "":
         return False
-    
+
     elif len(sentence) > 1:
         for letter in abecedary:
-            if letter in sentence:
-                return True
-            else:
-                return  False
-                break
+            if letter not in sentence:
+                return False
+        return True
+    else:
+        return False
